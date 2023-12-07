@@ -4,8 +4,8 @@ import styles from '../styles/Navbar.module.css';
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <Link href="/home">Home</Link>
-      <Link href="/add-client" style={{backgroundColor:'green'}}>Inserir Cliente</Link>
+      <Link href="/categoria">Categoria</Link>
+      <Link href="/produto">Produto</Link>
     </nav>
   );
 };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import style from "../../styles/Home.module.css";
+import style from "../../../styles/Home.module.css";
 import { useRouter } from "next/router";
 
 const DeleteClient = () => {
@@ -12,9 +12,9 @@ const DeleteClient = () => {
   const handleDeleteClient = () => {
   
     axios
-      .delete("http://localhost:8080/clients/" + clientId)
+      .delete("https://localhost:7133/Categorias/" + clientId)
       .then(() => {
-        router.push("/home");
+        router.push("/categoria");
       })
       .catch((error) => {
         alert("Erro ao excluir cliente:" + error);
@@ -25,12 +25,12 @@ const DeleteClient = () => {
 
     <div>
     
-      <h1 className={style.h1}>Excluir Cliente</h1>
+      <h1 className={style.h1}>Excluir Categoria</h1>
       <table style={{ marginLeft: "20px" }}>
         <tbody>
           <tr>
             <td>
-              <label>ID do Cliente a ser excluído:</label>
+              <label>ID Categoria:</label>
             </td>
             <td>
               <input
@@ -42,7 +42,7 @@ const DeleteClient = () => {
           </tr>
           <tr>
             <td colSpan="2">
-              <button onClick={handleDeleteClient}>Excluir Cliente</button>
+              <button onClick={handleDeleteClient}>Excluir Categoria</button>
             </td>
           </tr>
         </tbody>

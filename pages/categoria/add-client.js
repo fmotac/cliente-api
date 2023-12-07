@@ -1,13 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
-import style from "../styles/Home.module.css";
+import style from "../../styles/Home.module.css";
 import { useRouter } from "next/router";
 
 const AddClient = () => {
 
 
 
-  const [newClient, setNewClient] = useState({ name: "", email: "" });
+  const [newClient, setNewClient] = useState({ nome: "", imagemUrl: "" });
   const router = useRouter();
 
   const handleInputChange = (e) => {
@@ -16,18 +16,18 @@ const AddClient = () => {
 
   const handleAddClient = () => {
     axios
-      .post("http://localhost:8080/clients", newClient)
-      .then((response) => {
-        router.push("/home");
+      .post("https://localhost:7133/Categorias", newClient)
+      .then(() => {
+        router.push("/categoria");
       })
       .catch((error) => {
         alert("Erro ao inserir cliente:" + error);
       });
   };
 
-  return (
+  return (  
     <div style={{ margin: "0 auto" }}>
-      <h1 className={style.h1}>Inserir Cliente</h1>
+      <h1 className={style.h1}>Inserir Categoria</h1>
       <table style={{ marginLeft: "20px" }}>
         <tbody>
           <tr>
@@ -37,28 +37,28 @@ const AddClient = () => {
             <td>
               <input
                 type="text"
-                name="name"
-                value={newClient.name}
+                name="nome"
+                value={newClient.nome}
                 onChange={handleInputChange}
               />
             </td>
           </tr>
           <tr>
             <td>
-              <label>Email:</label>
+              <label>URL imagem:</label>
             </td>
             <td>
               <input
                 type="text"
-                name="email"
-                value={newClient.email}
+                name="imagemUrl"
+                value={newClient.imagemUrl}
                 onChange={handleInputChange}
               />
             </td>
           </tr>
           <tr>
             <td colSpan="2">
-              <button onClick={handleAddClient}>Inserir Cliente</button>
+              <button onClick={handleAddClient}>Inserir Categoria</button>
             </td>
           </tr>
         </tbody>
