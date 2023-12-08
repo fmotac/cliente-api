@@ -23,7 +23,7 @@ const Home = () => {
     <div>
       <h1 className={style.h1}>Lista de Categorias</h1>
       <p>
-        <Link href="categoria/add-categoria" style={{ backgroundColor: "green" , color:'white', textDecoration:'none'}}>
+        <Link href="categoria/add-client" style={{ backgroundColor: "green" , color:'white', textDecoration:'none'}}>
           Inserir Categoria
         </Link>
       </p>
@@ -45,13 +45,13 @@ const Home = () => {
               <td>{element.imagemUrl}</td>
               <td>
                 <Link
-                  href={`categoria/update-categoria/${element.categoriaId}`}
+                  href={`categoria/update-client/${element.categoriaId}`}
                   className="btn btn-warning"
                 >
                   Editar
                 </Link>
                 <Link
-                  href={`categoria/delete-categoria/${element.categoriaId}`}
+                  href={`categoria/delete-client/${element.categoriaId}`}
                   className="btn btn btn-danger"
                 >
                   Excluir
